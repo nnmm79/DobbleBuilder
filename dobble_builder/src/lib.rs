@@ -1,5 +1,5 @@
 
-pub fn create<'a>(symbols_per_card: u8) -> Result<(), &'static str> {
+pub fn create<'a>(symbols_per_card: u8) -> Result<Vec<Vec<u8>>, &'static str> {
     if symbols_per_card < 3 {
         return Err("Dobble can be constructor only when we have more that 3 symbols per card");
     }
@@ -23,7 +23,7 @@ pub fn create<'a>(symbols_per_card: u8) -> Result<(), &'static str> {
     }
 
 
-    Ok(())
+    Ok(used_symbols)
 }
 
 #[cfg(test)]
@@ -35,6 +35,12 @@ mod tests {
         let result = create(2);
         assert!(result.is_err());
 
+    }
+
+    #[test]
+    fn check_minimum_ok() {
+        let result = create(3);
+        assert!(result.is_ok());
     }
 
     #[test]

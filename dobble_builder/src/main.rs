@@ -1,11 +1,13 @@
 use std::env;
 use std::process;
 
+use dobble_builder::create;
+
 fn main() {
     let args: Vec<String> = env::args().collect();
     let symbols_per_card: u8 = parse_config(&args);
 
-    if let Err(e) = run(symbols_per_card) {
+    if let Err(e) = create(symbols_per_card) {
         println!("Application error: {e}");
         process::exit(1);
     }

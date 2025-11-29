@@ -15,7 +15,7 @@ pub fn create<'a>(symbols_per_card: u8) -> Result<Vec<Vec<u8>>, &'static str> {
         for i in 1..symbols_per_card-1 {
             vec2.push(0);
         }
-        vec.push(vec2);
+        used_symbols.push(vec2);
     }
 
     for symbol in 1..max_card_count {

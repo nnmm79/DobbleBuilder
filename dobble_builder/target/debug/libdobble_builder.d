@@ -1,0 +1,1 @@
+/home/borisp/SynologyDrive/SynologyDrive/projects/DobbleBuilder/dobble_builder/target/debug/libdobble_builder.rlib: /home/borisp/SynologyDrive/SynologyDrive/projects/DobbleBuilder/dobble_builder/src/lib.rs
